@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Code Quality') {
             steps {
-                sh "wc -l src\main\java\com\mycompany\app\App.java"
+                sh "wc -l App.java"
             }
         }
         stage("Test") {
