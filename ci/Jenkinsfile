@@ -8,7 +8,7 @@ pipeline {
     
     parameters {
         booleanParam(defaultValue: false, description: 'Whether to Run the Code', name: 'RUN') 
-        stringParam(defaultValue: "Development", description: 'Type of build', name: 'BUILD_TYPE') 
+        string(defaultValue: "Development", description: 'Type of build', name: 'BUILD_TYPE') 
     }
 
     stages {
