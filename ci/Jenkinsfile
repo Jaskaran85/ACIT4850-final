@@ -29,10 +29,10 @@ pipeline {
             steps {
                 sh "mvn test"
             }
-            post {
-                when {
+            when {
                     expression { params.BUILD_TYPE == 'Development' }
-                }
+            }
+            post {
                 steps {
                     junit 'target/*.xml'
                 }
