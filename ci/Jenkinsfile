@@ -33,7 +33,7 @@ pipeline {
                 when {
                     BUILD_TYPE == 'Development'
                 }
-                steps 
+                steps {
                     junit 'target/*.xml'
                 }
             }
