@@ -38,9 +38,9 @@ pipeline {
                 }
             }
         }
-        stage('Run') {
+        stage('RUN') {
             when {
-                expression { params.RUN == true}
+                expression { params.RUN}
             }
             steps {
                 sh 'chmod +x deliver.sh'
