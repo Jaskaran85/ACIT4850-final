@@ -49,7 +49,7 @@ pipeline {
         }
         stage("Build Results") {
             steps {
-                echo "Build ${BUILD_TYPE} completed successfully"
+                echo "Build completed successfully"
                 echo "I have now completed ACIT 4850! yaaahh...."
             }
         }
