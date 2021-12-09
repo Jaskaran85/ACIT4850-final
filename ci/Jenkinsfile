@@ -31,7 +31,7 @@ pipeline {
             }
             post {
                 when {
-                    BUILD_TYPE == 'Development'
+                    env.BUILD_TYPE == 'Development'
                 }
                 steps {
                     junit 'target/*.xml'
@@ -40,7 +40,7 @@ pipeline {
         }
         stage('Run') {
             when {
-                RUN == true
+                env.RUN == true
             }
             steps {
                 sh 'chmod +x deliver.sh'
