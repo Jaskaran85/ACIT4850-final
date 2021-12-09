@@ -29,17 +29,18 @@ pipeline {
             steps {
                 sh "mvn test"
             }
-            if (params.BUILD_TYPE == 'Development') {
-                post {    
-                    steps {
-                        junit 'target/*.xml'
-                    }
+            post {
+                when {
+                    expression { params.BUILD_TYPE == 'Development }
+                }
+                steps {
+                    junit 'target/*.xml'
                 }
             }
         }
         stage('Run') {
             when {
-                parameters.RUN == true
+                expression { params.RUN }
             }
             steps {
                 sh 'chmod +x deliver.sh'
