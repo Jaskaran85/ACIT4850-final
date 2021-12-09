@@ -30,11 +30,10 @@ pipeline {
                 sh "mvn test"
             }
             post {
-                when {
-                    parameters.BUILD_TYPE == 'Development'
-                }
-                steps {
-                    junit 'target/*.xml'
+                if (parameters.BUILD_TYPE == 'Development') {
+                    steps {
+                        junit 'target/*.xml'
+                    }
                 }
             }
         }
