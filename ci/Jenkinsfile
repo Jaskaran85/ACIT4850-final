@@ -29,8 +29,8 @@ pipeline {
             steps {
                 sh "mvn test"
             }
-            post {
-                if (params.BUILD_TYPE == 'Development') {
+            if (params.BUILD_TYPE == 'Development') {
+                post {    
                     steps {
                         junit 'target/*.xml'
                     }
