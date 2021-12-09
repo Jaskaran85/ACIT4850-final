@@ -33,7 +33,7 @@ pipeline {
                     expression { params.BUILD_TYPE == 'Development' }
             }
             post {
-                steps {
+                always {
                     junit 'target/*.xml'
                 }
             }
